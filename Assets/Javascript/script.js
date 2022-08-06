@@ -10,7 +10,7 @@ var buttonD = document.querySelector("#D");
 var endGame = document.querySelector("#endgame");
 
 var timeRemaining = 60;
-var timerInterval;
+var timeClock;
 var QuestionIndex = 0;
 
 
@@ -72,6 +72,14 @@ var quizQuestions =[
 startScreen.addEventListener("click", function(){
     startScreen.setAttribute("style", "display:none");
     generateQuizQuestions();
+    timeClock =setInterval(function(){
+        timeRemaining --;
+        countDown.textContent = "Time Remaining" + timeRemaining;
+    if(timeRemaining === 0){
+        clearInterval(timeClock);
+        finalScore;
+    }
+    }, 1000)
 });
 
 var currentIndex = 0
