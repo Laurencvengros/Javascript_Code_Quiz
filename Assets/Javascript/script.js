@@ -8,10 +8,15 @@ var buttonB = document.querySelector("#B");
 var buttonC = document.querySelector("#C");
 var buttonD = document.querySelector("#D");
 var endGame = document.querySelector("#endgame");
+var answerChoice = document.querySelector("rightwrong");
 
 var timeRemaining = 60;
 var timeClock;
 var QuestionIndex = 0;
+var questionIndex = 0
+var correctAnswer;
+var score=0;
+
 
 
 var quizQuestions =[
@@ -71,25 +76,36 @@ var quizQuestions =[
 
 startScreen.addEventListener("click", function(){
     startScreen.setAttribute("style", "display:none");
-    generateQuizQuestions();
+    addQuizQuestions();
     timeClock =setInterval(function(){
         timeRemaining --;
         countDown.textContent = "Time Remaining" + timeRemaining;
     if(timeRemaining === 0){
         clearInterval(timeClock);
-        finalScore;
+        finalScore();
     }
     }, 1000)
 });
 
-var currentIndex = 0
+var QuizLength = quizQuestions.length
 
-function generateQuizQuestions(){
+function addQuizQuestions(){
     quizpage.style.display = "block";
-    var currentQuestion = quizQuestions[currentIndex];
+    var currentQuestion = quizQuestions[questionIndex];
     questionList.textContent = currentQuestion.question;
     buttonA.textContent = currentQuestion.A;
     buttonB.textContent = currentQuestion.B;
     buttonC.textContent = currentQuestion.C;
     buttonD.textContent = currentQuestion.D;
+};
+
+
+function checkAnswer(answer){
+    correct = quizQuestions[questionIndex].correctChoice;
+
+    if (answer === correct && questionIndex !== QuizLength){
+        correct.textContent = "Correct!";
+        questionIndex++;
+        addQuizQuestions();
+    }
 };
