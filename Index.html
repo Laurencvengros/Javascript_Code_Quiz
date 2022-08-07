@@ -18,23 +18,32 @@
                 
                 <button id="startquiz"> Start Quiz!</button>
             </section>
-
-            <section id="quizpage" style ="display: none;">
-                <div id="countdown"> </div>
-                    <button id="incorrect"> Incorrect Answer</button>
-                    <div id="questionlist"><p></p></div>
-                        <ul>
-                            <li><button id="A" onclick="checkAnswer('A')"></button> </li>
-                            <li><button id="B" onclick="checkAnswer('B')"></button> </li>
-                            <li><button id="C" onclick="checkAnswer('C')"></button> </li>
-                            <li><button id="D" onclick="checkAnswer('D')"></button> </li>
-                        </ul>
-                    <div id="rightwrong"></div>      
-            </section>
+                <section id="quizpage" style ="display: none;">
+                    <div id="countdown"> </div>
+        
+                        <div id="questionlist"><p></p></div>
+                            <ul>
+                                <li><button id="A" onclick="checkAnswer('A')"></button> </li>
+                                <li><button id="B" onclick="checkAnswer('B')"></button> </li>
+                                <li><button id="C" onclick="checkAnswer('C')"></button> </li>
+                                <li><button id="D" onclick="checkAnswer('D')"></button> </li>
+                            </ul>
+                        <div id="rightwrong"></div>      
+                    </section>
+              
+            
 
             
 
-            <section id="endgame"></section>
+            <section id="endgame" style ="display: none;">
+                <div id="finalscore"></div>
+                    <h2> Quiz Complete! </h2>
+                        <p> Enter Your Initials: <span id="yourscore"><input id="enterinitials"/></span></p>
+                        <button id = "submit">Submit Your Score</button>
+
+
+
+            </section>
 
 
 

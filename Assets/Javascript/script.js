@@ -8,14 +8,17 @@ var buttonB = document.querySelector("#B");
 var buttonC = document.querySelector("#C");
 var buttonD = document.querySelector("#D");
 var endGame = document.querySelector("#endgame");
-var answerChoice = document.querySelector("rightwrong");
+var answerChoice = document.querySelector("#rightwrong");
+var finalScore = document.querySelector("#finalscore");
+var yourScore = document.querySelector("#yourscore");
+var initialsEl = document.querySelector("#enterinitials")
 
 var timeRemaining = 60;
 var timeClock;
 var QuestionIndex = 0;
 var questionIndex = 0
 var correctAnswer;
-var score=0;
+var score= 0;
 
 
 
@@ -82,7 +85,9 @@ startScreen.addEventListener("click", function(){
         countDown.textContent = "Time Remaining" + timeRemaining;
     if(timeRemaining === 0 || questionIndex === quizLength){
         clearInterval(timeClock);
-        finalScore();
+        endGame.style.display = "block";
+        quizpage.style.display = "none";
+        displayScore();
     }
     
     }, 1000)
@@ -101,8 +106,7 @@ function addQuizQuestions(){
 };
 
 
-function checkAnswer(answer){
-    event.preventDefault();
+function checkAnswer (answer){
     rightwrong.setAttribute("style", "display:Block");
     var text= document.createElement("text");
     rightwrong.appendChild(text);
@@ -113,6 +117,7 @@ function checkAnswer(answer){
         text.textContent = "Correct!";
         console.log("Correct!");
         questionIndex++;
+        score++;
         addQuizQuestions();
         
     }else if(answer !== correct && questionIndex !== quizLength){
@@ -120,35 +125,18 @@ function checkAnswer(answer){
         console.log("Incorrect!");
         questionIndex++;
         timeRemaining = timeRemaining -10;
-        countDown.textContent = "Time Remainig" + timeRemaining;
+        countDown.textContent = "Time Remaining" + timeRemaining;
         addQuizQuestions();
 
     }else{
-        finalScore();
+        displayScore();
     }
 
 };
 
-
-
-/*function displayAnswers(event){
-    event.preventDefault();
-    correctAnswer =quizQuestions[questionIndex].correctChoice;
-    correctAnswer.setAttribute("style", "display:block");
-    var p = document.createElement("p");
-    correctAnswer.appendChild(p);
-
-    if(quizQuestions[questionIndex].correctChoice === event.target.value){
-        p.textContent = "Correct!";
-
-    }else if(quizQuestions[questionIndex].correctChoice===!event.target.value){
-        timeRemaining = timeRemaining - 10;
-        p.textContent = "Incorrect!";
-    }
-
-    if(quizQuestions < quizQuestions.length){
-        quizQuestions++;
-        addQuizQuestions(quizQuestions);
-    }
-
-}*/
+function displayScore(){
+  
+    initialsEl.value= "";
+    finalScore.textContent = "Your final score is " + score + " out of " + quizLength;
+    
+}
