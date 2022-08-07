@@ -80,14 +80,15 @@ startScreen.addEventListener("click", function(){
     timeClock =setInterval(function(){
         timeRemaining --;
         countDown.textContent = "Time Remaining" + timeRemaining;
-    if(timeRemaining === 0){
+    if(timeRemaining === 0 || questionIndex === quizLength){
         clearInterval(timeClock);
         finalScore();
     }
+    
     }, 1000)
 });
 
-var QuizLength = quizQuestions.length
+var quizLength = quizQuestions.length
 
 function addQuizQuestions(){
     quizpage.style.display = "block";
@@ -101,11 +102,53 @@ function addQuizQuestions(){
 
 
 function checkAnswer(answer){
+    event.preventDefault();
+    rightwrong.setAttribute("style", "display:Block");
+    var text= document.createElement("text");
+    rightwrong.appendChild(text);
+   
     correct = quizQuestions[questionIndex].correctChoice;
 
-    if (answer === correct && questionIndex !== QuizLength){
-        correct.textContent = "Correct!";
+    if (answer === correct && questionIndex !== quizLength){
+        text.textContent = "Correct!";
+        console.log("Correct!");
         questionIndex++;
         addQuizQuestions();
+        
+    }else if(answer !== correct && questionIndex !== quizLength){
+        text.textContent ="Incorrect!";
+        console.log("Incorrect!");
+        questionIndex++;
+        timeRemaining = timeRemaining -10;
+        countDown.textContent = "Time Remainig" + timeRemaining;
+        addQuizQuestions();
+
+    }else{
+        finalScore();
     }
+
 };
+
+
+
+/*function displayAnswers(event){
+    event.preventDefault();
+    correctAnswer =quizQuestions[questionIndex].correctChoice;
+    correctAnswer.setAttribute("style", "display:block");
+    var p = document.createElement("p");
+    correctAnswer.appendChild(p);
+
+    if(quizQuestions[questionIndex].correctChoice === event.target.value){
+        p.textContent = "Correct!";
+
+    }else if(quizQuestions[questionIndex].correctChoice===!event.target.value){
+        timeRemaining = timeRemaining - 10;
+        p.textContent = "Incorrect!";
+    }
+
+    if(quizQuestions < quizQuestions.length){
+        quizQuestions++;
+        addQuizQuestions(quizQuestions);
+    }
+
+}*/
