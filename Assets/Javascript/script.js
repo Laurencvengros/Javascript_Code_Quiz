@@ -19,6 +19,7 @@ var highscoreElm = document.querySelector("#highscorelist");
 var leaderNamesDisplay = document.querySelector("#leaderinitials");
 var leaderScoresDisplay = document.querySelector("#leaderscores");
 var clearDataBtn = document.querySelector("#clearscoredata");
+var playAgainBtn = document.querySelector("#playagain");
 
 var timeRemaining = 60;
 var timeClock;
@@ -205,3 +206,11 @@ function generateHighscore(){
     leaderNamesDisplay.textContent ="";
     leaderScoresDisplay.textContent = "";
     };
+
+playAgainBtn.addEventListener("click", function(){
+    startScreen.style.display ="block";
+    highscoreElm.setAttribute("style", "display: none");
+    endGame.setAttribute("style", "display: none");
+    timeRemaining = 60;
+    countDown.textContent = "Time Remaining" + timeRemaining;
+});
