@@ -188,11 +188,9 @@ function generateHighscore(){
     var highscores = JSON.parse(localStorage.getItem("listHighscores")) || [];
     for (i=0; i<highscores.length; i++){
         var newNameInitials = document.createElement("li");
-        var newScore = document.createElement("li");
-        newNameInitials.textContent = highscores[i].name;
-        newScore.textContent = highscores[i].score;
+        newNameInitials.textContent = highscores[i].name + ":" + highscores[i].score;
         leaderNamesDisplay.appendChild(newNameInitials);
-        leaderScoresDisplay.appendChild(newScore);
+        
        
        
     }
