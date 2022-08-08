@@ -23,11 +23,11 @@ var playAgainBtn = document.querySelector("#playagain");
 
 var timeRemaining = 60;
 var timeClock;
-var QuestionIndex = 0;
 var questionIndex = 0
 var correctAnswer;
 var score= 0;
 var leaderBoard = [];
+var text = document.createElement("text");
 
 
 
@@ -120,7 +120,7 @@ function addQuizQuestions(){
 
 function checkAnswer (answer){
     rightwrong.setAttribute("style", "display:Block");
-    var text= document.createElement("text");
+    //var text= document.createElement("text");
     rightwrong.appendChild(text);
    
     correct = quizQuestions[questionIndex].correctChoice;
@@ -213,4 +213,9 @@ playAgainBtn.addEventListener("click", function(){
     endGame.setAttribute("style", "display: none");
     timeRemaining = 60;
     countDown.textContent = "Time Remaining" + timeRemaining;
+    score=0;
+    questionIndex=0;
+    localStorage.clear();
+    text.textContent = "";
+   
 });
