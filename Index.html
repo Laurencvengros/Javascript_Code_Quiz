@@ -7,9 +7,10 @@
         <title>Coding Quiz</title>
         <link rel="stylesheet" href="./Assets/CSS/style.css">
     </head>
-    <body>
+    <body >
 
         <section id="startscreen">
+            <button id="seehighscores"> High Scores</button>
             <h1> Coding Quiz</h1>
                 <h2>This Quiz Will Test Your Knowledge On Javascript Code. </h2>
                 <h2>Try To Answer All the Questions Before The Timer Runs Out!</h2>
@@ -23,11 +24,11 @@
             <div id="countdown"> </div>
         
                 <div id="questionlist"><p></p></div>
-                    <ul>
-                        <li><button id="A" onclick="checkAnswer('A')"></button> </li>
-                        <li><button id="B" onclick="checkAnswer('B')"></button> </li>
-                        <li><button id="C" onclick="checkAnswer('C')"></button> </li>
-                        <li><button id="D" onclick="checkAnswer('D')"></button> </li>
+                    <ul id="questionbox">
+                        <button id="A" onclick="checkAnswer('A')"></button> 
+                        <button id="B" onclick="checkAnswer('B')"></button> 
+                        <button id="C" onclick="checkAnswer('C')"></button> 
+                        <button id="D" onclick="checkAnswer('D')"></button> 
                     </ul>
                 <div id="rightwrong"></div>      
         </section>
@@ -38,7 +39,7 @@
 
         <section id="endgame" style ="display: none;">
             <div id="finalscore"></div>
-                <h2> Quiz Complete! </h2>
+                <h2 id="scorepage"> Quiz Complete! </h2>
                     <p> Enter Your Initials: <span id="yourscore"><input id="enterinitials"/></span></p>
                 <button id = "submit">Submit Your Score</button>
         </section>
