@@ -9,41 +9,52 @@
     </head>
     <body>
 
-        <h1> Coding Quiz</h1>
-            <section id="startscreen">
+        <section id="startscreen">
+            <h1> Coding Quiz</h1>
                 <h2>This Quiz Will Test Your Knowledge On Javascript Code. </h2>
                 <h2>Try To Answer All the Questions Before The Timer Runs Out!</h2>
                 <h3>  wrong answers will impact your score and subtract 5 seconds 
                     from your time.</h3>
                 
-                <button id="startquiz"> Start Quiz!</button>
-            </section>
-                <section id="quizpage" style ="display: none;">
-                    <div id="countdown"> </div>
+                    <button id="startButton"> Start Quiz!</button>
+        </section>
+
+        <section id="quizpage" style ="display: none;">
+            <div id="countdown"> </div>
         
-                        <div id="questionlist"><p></p></div>
-                            <ul>
-                                <li><button id="A" onclick="checkAnswer('A')"></button> </li>
-                                <li><button id="B" onclick="checkAnswer('B')"></button> </li>
-                                <li><button id="C" onclick="checkAnswer('C')"></button> </li>
-                                <li><button id="D" onclick="checkAnswer('D')"></button> </li>
-                            </ul>
-                        <div id="rightwrong"></div>      
-                    </section>
+                <div id="questionlist"><p></p></div>
+                    <ul>
+                        <li><button id="A" onclick="checkAnswer('A')"></button> </li>
+                        <li><button id="B" onclick="checkAnswer('B')"></button> </li>
+                        <li><button id="C" onclick="checkAnswer('C')"></button> </li>
+                        <li><button id="D" onclick="checkAnswer('D')"></button> </li>
+                    </ul>
+                <div id="rightwrong"></div>      
+        </section>
               
             
 
             
 
-            <section id="endgame" style ="display: none;">
-                <div id="finalscore"></div>
-                    <h2> Quiz Complete! </h2>
-                        <p> Enter Your Initials: <span id="yourscore"><input id="enterinitials"/></span></p>
-                        <button id = "submit">Submit Your Score</button>
+        <section id="endgame" style ="display: none;">
+            <div id="finalscore"></div>
+                <h2> Quiz Complete! </h2>
+                    <p> Enter Your Initials: <span id="yourscore"><input id="enterinitials"/></span></p>
+                <button id = "submit">Submit Your Score</button>
+        </section>
+
+        <section id="highscorelist" style = "display: none;">
+            <H2>Leader Board</H2>
+            <div id="leaderboard">
+                <h3></h3>
+                <div id= "leaderinitials"></div>
+                <div id="leaderscores"></div>
+                       
+                    
+            </div>
 
 
-
-            </section>
+        </section>
 
 
 
@@ -56,6 +67,6 @@
     
     
     
-            <script src="./Assets/Javascript/script.js"></script>
+        <script src="./Assets/Javascript/script.js"></script>
     </body>
 </html>
