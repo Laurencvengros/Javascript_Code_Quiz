@@ -18,6 +18,7 @@ var leaderboardEl = document.querySelector("#leaderboard");
 var highscoreElm = document.querySelector("#highscorelist");
 var leaderNamesDisplay = document.querySelector("#leaderinitials");
 var leaderScoresDisplay = document.querySelector("#leaderscores");
+var clearScores = document.querySelector("#clearscoredata");
 
 var timeRemaining = 60;
 var timeClock;
@@ -179,3 +180,22 @@ submitScore.addEventListener("click", function highscoreEl(){
 
 });
 
+function generateHighscore(){
+    
+    leaderNamesDisplay.textContent = "";
+    leaderScoresDisplay.textContent ="";
+    var highscores = JSON.parse(localStorage.getItem("listHighscores")) || [];
+    for (i=0; i<highscores.length; i++){
+        var newNameInitials = document.createElement("li");
+        var newScore = document.createElement("li");
+        newNameInitials.textContent = highscores[i].name;
+        newScore.textContent = highscores[i].score;
+        leaderNamesDisplay.appendChild(newNameInitials);
+        leaderScoresDisplay.appendChild(newScore);
+       
+       
+    }
+  
+  };
+  
+ 
