@@ -18,7 +18,7 @@ var leaderboardEl = document.querySelector("#leaderboard");
 var highscoreElm = document.querySelector("#highscorelist");
 var leaderNamesDisplay = document.querySelector("#leaderinitials");
 var leaderScoresDisplay = document.querySelector("#leaderscores");
-var clearScores = document.querySelector("#clearscoredata");
+var clearDataBtn = document.querySelector("#clearscoredata");
 
 var timeRemaining = 60;
 var timeClock;
@@ -197,5 +197,11 @@ function generateHighscore(){
     }
   
   };
+
+  clearDataBtn.addEventListener("click", clearData);
   
- 
+    function clearData(){
+    localStorage.clear();
+    leaderNamesDisplay.textContent ="";
+    leaderScoresDisplay.textContent = "";
+    };
