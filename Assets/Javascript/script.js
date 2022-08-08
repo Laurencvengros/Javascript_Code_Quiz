@@ -1,5 +1,4 @@
 var startScreen = document.querySelector("#startscreen");
-//var startQuiz = document.querySelector("#startquiz");
 var startButton = document.querySelector("#startButton")
 var quizPage = document.querySelector("#quizpage");
 var countDown = document.querySelector("#countdown");
@@ -22,7 +21,7 @@ var clearDataBtn = document.querySelector("#clearscoredata");
 var playAgainBtn = document.querySelector("#playagain");
 var highScoreBtn= document.querySelector("#seehighscores");
 
-var timeRemaining = 900;
+var timeRemaining = 60;
 var timeClock;
 var questionIndex = 0
 var correctAnswer;
@@ -95,7 +94,7 @@ function startQuiz() {
     addQuizQuestions();
     timeClock =setInterval(function(){
         timeRemaining --;
-        countDown.textContent = "Time Remaining" + timeRemaining;
+        countDown.textContent = "Time Remaining: " + timeRemaining;
     if(timeRemaining === 0 || questionIndex === quizLength){
         clearInterval(timeClock);
         endGame.style.display = "block";
