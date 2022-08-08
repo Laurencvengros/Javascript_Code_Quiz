@@ -22,7 +22,7 @@ var clearDataBtn = document.querySelector("#clearscoredata");
 var playAgainBtn = document.querySelector("#playagain");
 var highScoreBtn= document.querySelector("#seehighscores");
 
-var timeRemaining = 60;
+var timeRemaining = 900;
 var timeClock;
 var questionIndex = 0
 var correctAnswer;
@@ -196,9 +196,6 @@ function generateHighscore(){
        var newNameInitials = document.createElement("li");
         newNameInitials.textContent = highscores[i].name + ":" + highscores[i].score;
         leaderNamesDisplay.appendChild(newNameInitials);
-        
-       
-       
     }
   
   };
