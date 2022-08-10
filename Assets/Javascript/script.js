@@ -127,13 +127,11 @@ function checkAnswer (answer){
 
     if (answer === correct && questionIndex !== quizLength ){
         text.textContent = "Correct!";
-        console.log("Correct!");
         questionIndex++;
         score++;
         
     }else if(answer !== correct && questionIndex !== quizLength){
         text.textContent ="Incorrect!";
-        console.log("Incorrect!");
         questionIndex++;
         timeRemaining = timeRemaining -10;
         countDown.textContent = "Time Remaining" + timeRemaining;
@@ -177,13 +175,7 @@ submitScore.addEventListener("click", function highscoreEl(){
     localStorage.setItem("pastHighScores", JSON.stringify(pastHighScores));
     generateHighscore();
 
-    
 });
-
-function storeScores(){
-    localStorage.setItem()
-}
-
 
 
 function generateHighscore(){
@@ -191,13 +183,19 @@ function generateHighscore(){
     leaderNamesDisplay.textContent = "";
     leaderScoresDisplay.textContent ="";
     var highscores = JSON.parse(localStorage.getItem("pastHighScores")) || [];
+    highscores.sort(function(a,b){
+       return b.score - a.score;
+       
+    })
+
     for (i=0; i<highscores.length; i++){
        var newNameInitials = document.createElement("li");
         newNameInitials.textContent = highscores[i].name + ":" + highscores[i].score;
         leaderNamesDisplay.appendChild(newNameInitials);
     }
-  
-  };
+            
+        };
+
 
 clearDataBtn.addEventListener("click", clearData);
   

@@ -1,5 +1,5 @@
 :root{
-    background-color: rgb(93, 105, 219);
+    background-color: rgb(183, 185, 207);
     color: rgb(22, 22, 22);
     font-family:monospace
     
@@ -21,9 +21,8 @@ h3{ font-size: 20px;
 }
 
 #startButton{
-    position: absolute;
-    left:650px;
-    bottom: 400px;
+    position: relative;
+    left: 37%;
     font-size: 40px;
     border: 35px solid, black;
     background-color: aquamarine;
@@ -48,7 +47,7 @@ button:hover{
 
 #A{
     position: absolute;
-    left:450px;
+    left:30%;
     bottom: 600px;
     font-size:20px;
     border: 5px solid aquamarine;
@@ -62,7 +61,7 @@ button:hover{
 
 #B{
     position: absolute;
-    left:450px;
+    left:30%;
     bottom: 530px;
     font-size:20px;
     border: 5px solid aquamarine;
@@ -76,7 +75,7 @@ button:hover{
 
 #C{
     position: absolute;
-    left:450px;
+    left:30%;
     bottom: 460px;
     font-size:20px;
     border: 5px solid aquamarine;
@@ -90,7 +89,7 @@ button:hover{
 
 #D{
     position: absolute;
-    left:450px;
+    left:30%;
     bottom: 390px;
     font-size:20px;
     border: 5px solid aquamarine;
@@ -119,7 +118,7 @@ button:hover{
 #rightwrong{
     position: absolute;
     bottom: 270px;
-    left:320px;
+    left:15%;
     font-size: 50px;
     font-family: fantasy;
     border-bottom-style: solid;
@@ -135,7 +134,7 @@ button:hover{
 
 #submit{
     position: absolute;
-    left:650px;
+    left:40%;
     bottom: 500px;
     font-size: 27px;
     border: 5px groove;
@@ -147,7 +146,7 @@ p{
     font-size: 20px;
     position: absolute;
     bottom: 580px;
-    left: 600px;
+    left: 35%;
     font-family: monospace;
 }
 
@@ -157,7 +156,7 @@ p:hover{
 
 #finalscore{
     position:absolute;
-    left:550px;
+    left:35%;
     bottom: 700px;
     font-size: 30px;
     font-family: monospace;
@@ -165,36 +164,41 @@ p:hover{
 
 #playagain {
     position: absolute;
-    left:620px;
-    bottom: 500px;
+    left:43%;
+    bottom: 600px;
     font-size: 15px;
     font-family:monospace;
     border: 5px groove;
     background-color: aquamarine;
-    padding: 10px;
+    padding: 15px;
     padding-right:40px;
     padding-left: 40px;
+    display: flex;
+  justify-content: space-evenly;
 
 }
 
 #clearscoredata{
-    
+    text-align: center;
     position: absolute;
-    left:820px;
-    bottom: 500px;
+    left:43%;
+    bottom: 540px;
     font-size: 15px;
     font-family:monospace;
     border: 5px groove;
     background-color: aquamarine;
-    padding:10px;
-    padding-right:20px;
+    padding:15px;
+    padding-right:4px;
     padding-left: 20px;
+    
+    
 }
 
 #leaderinitials, #leaderscores{
     position: relative;
-    left: 700px;
+    left: 45%;
     font-size: 20px;
     font-family: monospace;
     font-weight: bold;
 }
+
