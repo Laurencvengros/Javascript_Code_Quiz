@@ -8,6 +8,8 @@ Desisned to be functional with all screen sizes
 
 Link to the deployed site:
 
+https://laurencvengros.github.io/Javascript_Code_Quiz/
+
 
 # Functionality
 
