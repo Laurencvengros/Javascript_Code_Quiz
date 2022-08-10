@@ -6,6 +6,9 @@ It stores your high score so that you can compare your scores to your friends.
 
 Desisned to be functional with all screen sizes
 
+Link to the deployed site:
+
+
 # Functionality
 
 WHEN you click the start button
@@ -34,3 +37,13 @@ THEN clicking the "clear scores" button will delete past data
 
 IF you want to play again
 THEN click the "play again" button to go back to the main screen
+
+# Screenshots of Website
+
+![main-screen](Assets/Images/main-screen.jpg "Screenshot of quiz start page")
+
+![question-screen](Assets/Images/question-screen.jpg "Screenshot of question page")
+
+![submit-screen](Assets/Images/submit-screen.jpg "Screenshot of submit scores page")
+
+![highscores-screen](Assets/Images/highscores-screen.jpg "Screenshot of leaderboard page")
