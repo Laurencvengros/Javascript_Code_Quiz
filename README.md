@@ -4,6 +4,8 @@ This is a timed quiz to test your knowledge on basic Javascript.
 
 It stores your high score so that you can compare your scores to your friends.
 
+Desisned to be functional with all screen sizes
+
 # Functionality
 
 WHEN you click the start button
@@ -23,3 +25,12 @@ THEN the game is ended and you are presented with your score and prompted to ent
 
 WHEN you enter your intitals
 THEN your score will be displayed on the leaderboard
+
+IF you scored higher than a previous leader score
+THEM your score will be displayed above theirs
+
+IF you want to clear scores from the leaderboard
+THEN clicking the "clear scores" button will delete past data
+
+IF you want to play again
+THEN click the "play again" button to go back to the main screen
